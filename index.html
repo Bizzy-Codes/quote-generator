@@ -8,23 +8,26 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(-45deg, #4facfe, #00f2fe, #ff9a9e, #fad0c4);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      overflow: hidden;
-      position: relative;
-    }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #4facfe, #00f2fe, #43e97b, #38f9d7);
+  background-size: 2000% 2000%;
+  animation: gradient 30s ease infinite;
+  overflow: hidden;
+  color: white;
+}
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
 
     .highlight {
       position: absolute;
@@ -238,6 +241,13 @@
     function shuffle(array) {
       return array.sort(() => Math.random() - 0.5);
     }
+
+    // Glow effect follows the mouse
+document.addEventListener("mousemove", (e) => {
+  document.body.style.setProperty("--x", e.clientX + "px");
+  document.body.style.setProperty("--y", e.clientY + "px");
+});
+
   </script>
 </body>
 </html>

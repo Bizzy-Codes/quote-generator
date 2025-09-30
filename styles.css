@@ -1,0 +1,133 @@
+:root {
+  --bg: linear-gradient(135deg, #667eea, #764ba2);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.25);
+  --border: rgba(255, 255, 255, 0.3);
+  --accent: #ffd369;
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.app {
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 0;
+}
+.subtitle {
+  font-size: 1rem;
+  color: #eee;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.controls input, .controls select {
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  min-width: 160px;
+}
+.controls input::placeholder {
+  color: #ddd;
+}
+.btn {
+  background: var(--accent);
+  color: #222;
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.status {
+  width: 100%;
+  text-align: center;
+  color: #ffd369;
+  margin-top: 5px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 16px;
+}
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.quote-author {
+  text-align: right;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+.small-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s;
+}
+.small-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+a { color: var(--accent); }
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
